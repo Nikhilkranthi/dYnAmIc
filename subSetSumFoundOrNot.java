@@ -34,7 +34,7 @@ class GFG
 	        {
 	            if(arr[i-1]<=j)
 	            {
-	                result[i][j]=result[i][j-arr[i-1]] || result[i-1][j];
+	                result[i][j]=result[i-1][j-arr[i-1]] || result[i-1][j];
 	            }
 	            else
 	            {
@@ -44,7 +44,7 @@ class GFG
 	    }
 	    for(int i=0;i<arr.length+1;i++)
 	    {
-	        for(int j=0;j<sum+!;j++)
+	        for(int j=0;j<sum+1;j++)
 	        {
 	            if(result[i][j]==true)
 	            {
