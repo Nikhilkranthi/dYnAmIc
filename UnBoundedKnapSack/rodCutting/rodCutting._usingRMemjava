@@ -1,0 +1,60 @@
+//https://practice.geeksforgeeks.org/problems/cutted-segments/0
+import java.io.*;
+import java.util.*;
+class GFG 
+{
+    
+	public static void main (String[] args) 
+	{
+	    int t;
+		Scanner s=new Scanner(System.in);
+		t=s.nextInt();
+		for(int i=0;i<t;i++)
+		{
+		    int N;
+		    N=s.nextInt();
+		    int [] r=new int [3];
+		   
+		    for(int j=0;j<3;j++)
+		    {
+		        r[j]=s.nextInt();
+		    }
+		   int [][] t1=new int[N+1][4];
+		    for(int j=0;j<N+1;j++)
+		    {
+		        for(int k=0;k<4;k++)
+		        {
+		            t1[j][k]=-1;
+		        }
+		    }
+		    
+		    System.out.println(knapSack(N,r,3,t1));
+		  //  System.out.println(c);
+		}
+	}
+	public static int knapSack(int N,int [] weight,int p,int [][] t)
+	{
+	    if(p==0)
+	    {
+	        return -100000;
+	    }
+	    if(N==0)
+	    {
+	        return 0;
+	    }
+	    if(t[N][p]!=-1)
+            return  t[N][p];
+	    else
+	    {
+	        if(weight[p-1]>N)
+	        {
+	            return t[N][p]=knapSack(N,weight,p-1,t);
+	        }
+	        else
+	        {
+	            return t[N][p]=Math.max(1+knapSack(N-weight[p-1],weight,p,t),knapSack(N,weight,p-1,t));
+	        }
+	    }
+	    
+	}
+}
