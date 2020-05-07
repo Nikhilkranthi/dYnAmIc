@@ -48,14 +48,6 @@ class GFG {
 	            }
 	        }
 	    }
-	   // for(int i=0;i<l1+1;i++)
-	   // {
-	   //     for(int j=0;j<l2+1;j++)
-	   //     {
-	   //         System.out.print(result[i][j]+" ");
-	   //     }
-	   //     System.out.println("");
-	   // }
 	    int max=-1;
 	    for(int i=0;i<l1+1;i++)
 	    {
